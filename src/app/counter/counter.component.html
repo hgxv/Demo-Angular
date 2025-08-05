@@ -1,0 +1,9 @@
+<p [class]="className">Paragraphe</p>
+<h3>Compteur : {{ count }}</h3>
+
+<button (click)="increment()">PLUS !</button>
+<button (click)="decrement()">MOINS !</button>
+
+@if (count >= 15) {
+    <p [class]="danger">Danger !</p>
+}

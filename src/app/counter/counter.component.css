@@ -1,0 +1,9 @@
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.danger {
+    font-weight: bold;
+    color: red;
+}

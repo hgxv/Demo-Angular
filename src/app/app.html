@@ -1,16 +1,22 @@
 <h1>Application</h1>
 
-<button (click)="isGood = !isGood">Toggle</button>
-@if (isGood) {
-  <p>{{ 2 + 2 }}</p>
+@if (false) {
+  <button (click)="isGood = !isGood">Toggle</button>
+  @if (isGood) {
+    <p>{{ 2 + 2 }}</p>
+  }
+
+  @for (fruit of fruits; track fruit) {
+    <p>{{ $index }} : {{ fruit }}</p>
+  }
+
+  <counter />
+
+  <exo-quote />
+
+  <exo-toggle-btn />  
+<app-students />
+
 }
 
-@for (fruit of fruits; track fruit) {
-  <p>{{ $index }} : {{ fruit }}</p>
-}
-
-<counter />
-
-<exo-quote />
-
-<exo-toggle-btn />
+<exo-city />

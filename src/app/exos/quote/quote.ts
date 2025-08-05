@@ -41,6 +41,5 @@ export class QuoteComponent {
   selectQuote() {
     let randomIndex = Math.floor(Math.random() * this.quotes.length);
     this.indexQuote = randomIndex;
-    console.log(this.quotes[this.indexQuote]);
   }
 }

@@ -1,0 +1,11 @@
+<select (change)="showCity($event)" >
+    @for (city of cities; track city) {
+        <option [value]="$index">{{ city.name }}</option>
+    }
+</select>
+
+<div>
+    <h2 [ngClass]="'title'">{{ cityName }}</h2>
+    <p>Pays : {{ cityCountry }}</p>
+    <img [src]="cityImage" [ngClass]="'image'">
+</div>

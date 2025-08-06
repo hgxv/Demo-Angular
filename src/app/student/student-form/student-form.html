@@ -1,0 +1,12 @@
+<div style="margin-bottom: 20px;">
+    <form>
+        <p>Nom de l'étudiant :</p>
+        <input type="text" name="name" [(ngModel)]="student.name" />
+        <br />
+        <p>Note de l'étudiant :</p>
+        <input type="number" name="grade" [(ngModel)]="student.grade" />
+        <br />
+        <button style="margin-top: 20px;" (click)="onSubmit()">Ajouter</button>
+    </form>
+    <p>{{ message }}</p>
+</div>

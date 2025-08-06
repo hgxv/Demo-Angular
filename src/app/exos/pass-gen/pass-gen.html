@@ -1,0 +1,17 @@
+<form>
+    <input name="numberChar" [(ngModel)]="numberChar" />
+    <br />
+    <input type="checkbox" name="isNumber" [(ngModel)]="isNumber">
+    <span>Présence de chiffres</span>
+    <br />
+    <input type="checkbox" name="isSpecialChar" [(ngModel)]="isSpecialChar">
+    <span>Présence de caractères spéciaux (&#64;, !, etc)</span>
+    <br />
+    <button (click)="createPass()">Générer</button>
+</form>
+
+@if (isGenerated) {
+    <p>Mot de passe généré : {{ password.password }}</p>
+    <button (click)="savePassword()">Sauvegarder</button>
+    <p>{{ message }}</p>
+}

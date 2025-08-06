@@ -1,0 +1,13 @@
+<student-student-form />
+
+<h3>Liste des étudiants ({{ students.length }}):</h3>
+
+<button (click)="averageVisibility = !averageVisibility">
+    {{ averageVisibility ? "Afficher" : "Masquer" }} toutes les moyennes
+</button>
+
+@for (student of students; track student) {
+    <student-student-card
+    [student]="student"
+    [averageVisibility]="averageVisibility"/>
+}

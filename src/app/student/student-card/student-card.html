@@ -1,0 +1,11 @@
+@if (student) {
+    <article>
+        <h4>{{ student.name }}</h4>
+        <button (click)="averageVisibility = !averageVisibility">
+            {{ averageVisibility ? "Masquer" : "Afficher"}} la moyenne
+        </button>
+        @if (averageVisibility) {
+            <p>{{ student.grade }}/20</p>
+        }
+    </article>
+}

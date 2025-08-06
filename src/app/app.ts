@@ -4,11 +4,12 @@ import { CounterComponent } from './counter/counter.component';
 import { QuoteComponent } from './exos/quote/quote';
 import { ExosModule } from './exos/exos-module';
 import { Students } from './students/students';
+import { StudentModule } from "./student/student-module";
 
 
 @Component({
   selector: 'app-root',
-  imports: [CounterComponent, ExosModule, Students],
+  imports: [CounterComponent, ExosModule, Students, StudentModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

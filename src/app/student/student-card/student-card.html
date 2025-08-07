@@ -1,11 +1,25 @@
 @if (student) {
     <article>
-        <h4>{{ student.name }}</h4>
+        <h4>{{ student.id }} : {{ student.name }}</h4>
         <button (click)="averageVisibility = !averageVisibility">
             {{ averageVisibility ? "Masquer" : "Afficher"}} la moyenne
         </button>
         @if (averageVisibility) {
             <p>{{ student.grade }}/20</p>
         }
+
+    <ul>
+        <li>
+            <a [routerLink]="['/student', student.id]">
+                Voir l'étudiant
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/student/del/', student.id]">
+                <button>Supprimer l'étudiant</button>
+            </a>
+        </li>
+    </ul>
+
     </article>
 }

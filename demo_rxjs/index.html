@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RxJS - Démo</title>
+</head>
+<body>
+    <h1>RxJS - Démo</h1>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.2/rxjs.umd.min.js" integrity="sha512-9rY+ul/tDd5uFmYIG3Wf6sTYh44qwK7ZUcAejPR1RzZ4I09ubJBeOoMvLtIUjXWN5ZfR8WgZx9gwnZhMQ0ve9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        const { Observable, range, map } = rxjs;
+
+
+        // functions
+        const log = n => console.log(n);
+        const square = n => n * n;
+        const double = n => n * 2;
+        const log2 = (n, m) => console.log(n, m);
+
+        // Création d'une source observable.
+        const $source = Observable.create(observer => {
+            observer.next("Ciao");
+            observer.next("tutti");
+
+            setTimeout(() => observer.next('bye bye'), 5000);
+        });
+
+        //const sub1 = $source.subscribe(log);
+        //const sub2 = $source.subscribe(value => log2('sub2 => ', value));
+
+        const $source2 = range(1, 10);
+
+        $source2
+            .pipe(
+                map(n => n + 5),
+                map(square)
+            )
+            .subscribe(log);
+    </script>
+    
+</body>
+</html>

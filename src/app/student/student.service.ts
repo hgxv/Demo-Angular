@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Student } from './student';
 
 
-const API = "http://localhost:3000/students";
+const API = "http://localhost:3000/students/";
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +22,11 @@ export class StudentService {
     return this.http.post<Student>(API, student);
   }
 
+  getStudent(id: string): Observable<Student> {
+    return this.http.get<Student>(API+id);  
+  }
+
+  deleteStudent(id: string): Observable<Student> {
+    return this.http.delete<Student>(API+id);  
+  }
 }

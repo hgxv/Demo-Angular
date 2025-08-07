@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
 import { Student } from '../student';
 
@@ -9,7 +9,7 @@ import { Student } from '../student';
   styleUrl: './student-list.css'
 })
 
-export class StudentList {
+export class StudentList implements OnInit {
 
   students: Student[] = []
   averageVisibility = false
@@ -20,9 +20,12 @@ export class StudentList {
       .then(res => res.json())
       .then(students => console.log(students)); */
 
+  }
+
+  ngOnInit(): void {
     this.studentService
       .getStudents()
       .subscribe((students: Student[]) => this.students = students);
-
   }
+
 }

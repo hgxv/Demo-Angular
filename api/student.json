@@ -64,6 +64,21 @@
       "id": "08c8",
       "name": "eee",
       "grade": 10
+    },
+    {
+      "id": "a138",
+      "name": "SaucisseMan",
+      "grade": 13
+    },
+    {
+      "id": "b963",
+      "name": "José",
+      "grade": 2
+    },
+    {
+      "id": "3aff",
+      "name": "Maxime",
+      "grade": 7
     }
   ],
   "passwords": [

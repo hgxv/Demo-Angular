@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Student } from '../student';
+import { StudentService } from '../student.service';
+import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'student-student-card',
@@ -8,10 +11,29 @@ import { Student } from '../student';
   styleUrl: './student-card.css'
 })
 
-export class StudentCard {
-  @Input()
-  student: Student | null = null;
+export class StudentCard implements OnInit {
 
-  @Input()
-  averageVisibility: boolean = false;
+    constructor(private studentService: StudentService) {}
+
+    private route = inject(ActivatedRoute);
+    id: string = "0";
+    isShowLink: boolean = false;
+
+    @Input()
+    student: Student | null = null;
+
+    @Input()
+    averageVisibility: boolean = false;
+
+
+    ngOnInit(): void {
+        this.route.params.subscribe(params => {
+            this.id = params["id"];
+            this.studentService
+                .getStudent(this.id)
+                .subscribe(student => this.student = student)
+            
+        })
+    }
+
 }

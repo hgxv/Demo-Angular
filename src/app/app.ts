@@ -1,7 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
-import { QuoteComponent } from './exos/quote/quote';
 import { ExosModule } from './exos/exos-module';
 import { Students } from './students/students';
 import { StudentModule } from "./student/student-module";
@@ -9,7 +8,14 @@ import { StudentModule } from "./student/student-module";
 
 @Component({
   selector: 'app-root',
-  imports: [CounterComponent, ExosModule, Students, StudentModule],
+  imports: [
+    CounterComponent,
+    ExosModule,
+    Students,
+    StudentModule,
+    RouterOutlet,
+    RouterLink
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

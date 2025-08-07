@@ -1,5 +1,16 @@
 <h1>Application</h1>
 
+
+<nav>
+    <ul>
+        <li><a [routerLink]="['/students']">Liste des étudiants</a></li>
+        <li><a [routerLink]="['/student/add']">Formulaire</a></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</nav>
+
 @if (false) {
   <button (click)="isGood = !isGood">Toggle</button>
   @if (isGood) {
@@ -19,8 +30,10 @@
 
 <exo-quote />
 <exo-city />
-
+<app-pass-gen />
 <student-student-list />
 }
 
-<app-pass-gen />
+
+
+<router-outlet />

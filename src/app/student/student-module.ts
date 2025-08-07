@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { StudentForm } from './student-form/student-form';
 import { StudentList } from './student-list/student-list';
 import { StudentCard } from './student-card/student-card';
-import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { Message } from './message/message';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { routes } from '../app.routes';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
@@ -13,15 +15,20 @@ import { FormsModule } from '@angular/forms';
     StudentForm,
     StudentList,
     StudentCard,
+    Message,
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   exports: [
     StudentCard,
     StudentList,
     StudentForm
+  ],
+  providers: [
+    provideRouter(routes, withComponentInputBinding())
   ]
 })
 export class StudentModule { }

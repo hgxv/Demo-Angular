@@ -1,12 +1,33 @@
 <div style="margin-bottom: 20px;">
-    <form>
+    <form #form="ngForm">
         <p>Nom de l'étudiant :</p>
-        <input type="text" name="name" [(ngModel)]="student.name" />
+        <input
+            #name="ngModel"
+            required
+            type="text"
+            name="name"
+            placeholder="Nom"
+            [(ngModel)]="student.name" />
         <br />
         <p>Note de l'étudiant :</p>
-        <input type="number" name="grade" [(ngModel)]="student.grade" />
+        <input
+            required=""
+            min="0"
+            max="20"
+            type="number"
+            name="grade"
+            [(ngModel)]="student.grade" />
         <br />
         <button style="margin-top: 20px;" (click)="onSubmit()">Ajouter</button>
     </form>
+
+    <section>
+        <div>Formulaire valide : {{ name.valid ? "oui" : "non" }}</div>
+    </section>
+
     <p>{{ message }}</p>
+    <student-message>
+        {{ message }}
+    </student-message>
+
 </div>

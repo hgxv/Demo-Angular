@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Student } from "../student";
 import { StudentService } from '../student.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'student-student-form',
@@ -12,7 +12,10 @@ import { StudentService } from '../student.service';
 
 export class StudentForm {
 
-  constructor(private studentService: StudentService) { }
+  constructor(
+    private studentService: StudentService,
+    private router: Router
+  ){ }
 
   student: Student = {
     name: "",
@@ -28,5 +31,10 @@ export class StudentForm {
       this.message = "L'étudiant a bien été ajouté !";
     })
     console.log("submit");
+
+    setTimeout(() => {
+        this.router.navigate(['/students']);        
+    }, 500);
+
   }
 }
